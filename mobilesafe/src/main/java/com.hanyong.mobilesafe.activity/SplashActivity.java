@@ -4,13 +4,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
 import com.hanyong.mobilesafe.R;
+import com.hanyong.mobilesafe.utils.StreamUtil;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,6 +23,7 @@ import static android.R.attr.versionName;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private static final String TAG = "SplashActivity";
     private TextView tv_version_name;
     private int mLocalVersionCode;
 
@@ -63,9 +67,28 @@ public class SplashActivity extends AppCompatActivity {
                 //发送请求获取数据,参数则为请求json的连接地址
                 try {
                     //1,封装url地址
-                    URL url = new URL("http://10.0.2.2:8080/update.josn");
+                    URL url = new URL("https://raw.githubusercontent.com/wzq930102/MyApplication/master/json");
                     //2，开启一个连接
-                    HttpURLConnection httpURLConnection =  (HttpURLConnection) url.openConnection();
+                    HttpURLConnection connection =  (HttpURLConnection) url.openConnection();
+                    //3,設置常見請求參數（）請求頭
+
+                    //請求超时
+                    connection.setConnectTimeout(2000);
+                    //读取超时
+                    connection.setReadTimeout(2000);
+
+                    //默认就是get请求方式
+//                    connection.setRequestMethod("POST");
+
+                    //4，获取响应码
+                    if(connection.getResponseCode() ==200){
+                        //以流的形式，将数据获取下来
+                        InputStream is = connection.getInputStream();
+                        //6，将流转换成字符串（工具类封装）
+                        String json = StreamUtil.streamToString(is);
+
+                        Log.i(TAG,json);
+                    }
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
