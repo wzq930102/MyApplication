@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/vr_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/my_login"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@mipmap/my_img_topbg">
+
+            <RelativeLayout
+                android:id="@+id/my_login_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/my_ImageView"
+                    android:layout_width="@dimen/dp66"
+                    android:layout_height="@dimen/dp66"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:src="@mipmap/my_user_photo_login"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="@dimen/dp1" />
+
+                <RelativeLayout
+                    android:id="@+id/my_dengLu_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_toRightOf="@+id/my_ImageView">
+
+                    <TextView
+                        android:id="@+id/my_dengLu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请登录"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:id="@+id/my_Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/my_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_dengLu"
+                        android:layout_marginTop="@dimen/dp4"
+                        android:drawableLeft="@mipmap/icon_money"
+                        android:drawablePadding="@dimen/dp2"
+                        android:gravity="center"
+                        android:text="563"
+                        android:textColor="#fccbc8"
+                        android:visibility="gone"
+                        android:textSize="@dimen/sp11" />
+
+                    <TextView
+                        android:id="@+id/my_lv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/my_dengLu"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_marginTop="@dimen/dp4"
+                        android:layout_toRightOf="@+id/my_num"
+                        android:drawableLeft="@mipmap/icon_vip"
+                        android:drawablePadding="@dimen/dp2"
+                        android:gravity="center"
+                        android:text="季度会员"
+                        android:textColor="#fccbc8"
+                        android:visibility="gone"
+                        android:textSize="@dimen/sp11" />
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp12"
+                    android:src="@mipmap/nav_common_icon_right" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/contacts_bg"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/my_cache"
+                style="@style/myTextSettings"
+                android:drawablePadding="@dimen/dp5"
+                android:drawableTop="@mipmap/contacts_icon_cache"
+                android:text="@string/localCache" />
+
+            <TextView
+                android:id="@+id/my_movie"
+                style="@style/myTextSettings"
+                android:drawablePadding="@dimen/dp5"
+                android:drawableTop="@mipmap/contacts_icon_video"
+                android:text="@string/localMovie" />
+
+            <TextView
+                android:id="@+id/my_history"
+                style="@style/myTextSettings"
+                android:drawablePadding="@dimen/dp5"
+                android:drawableTop="@mipmap/contacts_icon_memory"
+                android:text="@string/history" />
+
+            <TextView
+                android:id="@+id/my_collection"
+                style="@style/myTextSettings"
+                android:drawablePadding="@dimen/dp5"
+                android:drawableTop="@mipmap/contacts_icon_collect"
+                android:text="@string/collection" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/my_vip"
+            style="@style/myTextViewStyle"
+            android:drawableLeft="@mipmap/list_icon_vip"
+            android:text="@string/vip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:id="@+id/my_huozhong"
+            style="@style/myTextViewStyle"
+            android:drawableLeft="@mipmap/list_icon_pay"
+            android:text="@string/huozhong" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:id="@+id/my_suggest"
+            style="@style/myTextViewStyle"
+            android:drawableLeft="@mipmap/list_icon_message"
+            android:text="我的消息" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:id="@+id/my_setting"
+            style="@style/myTextViewStyle"
+            android:drawableLeft="@mipmap/list_icon_setting"
+            android:text="@string/setting" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:id="@+id/my_about"
+            style="@style/myTextViewStyle"
+            android:drawableLeft="@mipmap/list_icon_about"
+            android:text="@string/about" />
+    </LinearLayout>
+</ScrollView>

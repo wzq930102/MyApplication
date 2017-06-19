@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/vr_gray"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/item_playdatial_iv"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/a333"
+            />
+        <TextView
+            android:id="@+id/item_playdatial_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:maxEms="7"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

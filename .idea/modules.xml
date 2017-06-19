@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vr/VR.iml" filepath="$PROJECT_DIR$/vr/VR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jisuanqi/jisuanqi.iml" filepath="$PROJECT_DIR$/jisuanqi/jisuanqi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobilesafe/mobilesafe.iml" filepath="$PROJECT_DIR$/mobilesafe/mobilesafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylianxi/mylianxi.iml" filepath="$PROJECT_DIR$/mylianxi/mylianxi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytext/mytext.iml" filepath="$PROJECT_DIR$/mytext/mytext.iml" />
+    </modules>
+  </component>
+</project>

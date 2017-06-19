@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/homeFragment_item3_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+
+        <View
+            android:id="@+id/homeFragment_item3_View"
+            android:layout_width="4dp"
+            android:layout_height="14dp"
+            android:layout_centerVertical="true"
+            android:background="@color/vr_f44336" />
+
+        <TextView
+            android:id="@+id/homeFragment_item3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignLeft="@+id/homeFragment_item3_View"
+            android:layout_marginLeft="12dp"
+            android:gravity="center"
+            android:text="猜你喜欢"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/homeFragment_item3_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:drawableRight="@mipmap/common_icon_right"
+            android:gravity="center"
+            android:text="更多"
+            android:textColor="@color/vr_8888"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/homeFragment_item3_Layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeFragment_item3_Layout"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/homeFragment_item3_include1"
+            layout="@layout/item_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/homeFragment_item3_include2"
+            layout="@layout/item_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeFragment_item3_Layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeFragment_item3_Layout2"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/homeFragment_item3_include3"
+            layout="@layout/item_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/homeFragment_item3_include4"
+            layout="@layout/item_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

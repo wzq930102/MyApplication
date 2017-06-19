@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+apply plugin:'android-apt'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+    defaultConfig {
+        applicationId "com.jt.base"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "0.9.0.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(output.outputFile.parent, "TyVR.apk");
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //注解工具
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    //VR播放器
+    //底部导航
+    //轮播图
+    //圆形ImageView
+    //顶部导航
+    //可伸缩的TextView
+    //gson解析
+    //glide
+    //OkHttp封装类
+    //时间、城市选择
+    //recyclerView 下拉刷新
+    //选择视图
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.1'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    compile 'com.ms-square:expandableTextView:0.1.4'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.huxq17.xrefreshview:xrefreshview:3.6.5'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.contrarywind:Android-PickerView:3.2.3'
+    compile 'com.netease.hearttouch:ht-refreshrecyclerview:1.1.1'
+    compile 'com.classic.common:multiple-status-view:1.2'
+    compile 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
+    compile files('libs/lightcycle.jar')
+    compile files('libs/panocamera.jar')
+    compile files('libs/panoplayer_android.jar')
+    compile files('libs/universal-image-loader-1.9.4-with-sources.jar')
+    compile files('libs/vrsdk.jar')
+}
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral() // jcenter() works as well because it pulls from Maven Central
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

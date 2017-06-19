@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_moviedatecomment_iv"
+            android:layout_marginLeft="10dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/game1"
+            />
+        <TextView
+            android:id="@+id/item_moviedatecomment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/vr_797979"
+            android:layout_marginLeft="10dp"
+            android:text="聂风"
+            />
+    </LinearLayout>
+        <TextView
+            android:id="@+id/item_moviedatecomment_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/vr_1a1a1a"
+            android:layout_marginBottom="12dp"
+            android:text="2016年最波澜壮阔、最打动人心的传奇"
+            />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        >
+        <TextView
+            android:id="@+id/item_moviedatecomment_time"
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02/25 21:42"
+            android:textColor="@color/vr_bbbbbb"
+            />
+        <TextView
+            android:id="@+id/item_moviedatecomment_hf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回复"
+            android:textColor="@color/vr_bbbbbb"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

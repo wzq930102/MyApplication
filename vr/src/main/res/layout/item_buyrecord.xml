@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="1dp"
+                android:background="@color/white"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017/04/04"
+            android:textColor="#bbbbbb"
+            android:textSize="12dp"
+            android:id="@+id/record_time"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购买100个火种币"
+            android:textColor="#797979"
+            android:textSize="14dp"
+            android:id="@+id/record_firs"
+            android:layout_alignTop="@+id/record_time"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/record_time"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥ 10.00"
+        android:layout_marginTop="8dp"
+        android:id="@+id/record_menoy"
+        android:layout_below="@+id/record_firs"
+        android:textColor="#ff5858"
+        android:layout_alignLeft="@+id/record_firs"
+        android:layout_marginBottom="16dp"
+        android:layout_alignStart="@+id/record_firs"/>
+
+
+</RelativeLayout>

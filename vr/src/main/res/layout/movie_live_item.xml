@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="1dp">
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_centerHorizontal="true">-->
+    <ImageView
+        android:id="@+id/movie_live_content"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/movie_live_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/common_icon_mark_live" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最新标题"
+        android:gravity="center"
+        android:textSize="18dip"
+        android:id="@+id/textView5"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/movie_live_title"
+        android:layout_toEndOf="@+id/movie_live_title"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp" />
+    <!--</FrameLayout>-->
+</RelativeLayout>

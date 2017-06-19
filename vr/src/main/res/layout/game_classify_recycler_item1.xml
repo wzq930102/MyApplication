@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp4"
+    android:layout_marginTop="@dimen/dp4"
+    android:gravity="center_vertical">
+
+
+    <ImageView
+        android:layout_marginLeft="@dimen/dp6"
+        android:id="@+id/game_classify_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/world_game" />
+
+    <TextView
+        android:id="@+id/game_classify_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/game_classify_item_image"
+        android:text="角色扮演"
+        android:textColor="#d7000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/game_classify_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_classify_item_title"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/game_classify_item_image"
+        android:text="回合制   仙侠  三国" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/common_icon_right" />
+</RelativeLayout>
+
+

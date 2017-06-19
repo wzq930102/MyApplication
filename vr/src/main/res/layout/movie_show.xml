@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dp10">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间: 2017年3月7日（中国）" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:text="类型: 动作，爱情，冒险" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/dp56"
+        android:layout_marginStart="@dimen/dp56"
+        android:layout_toEndOf="@+id/text1"
+        android:layout_toRightOf="@+id/text1"
+        android:text="地区: 美国" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text3"
+        android:layout_alignStart="@+id/text3"
+        android:layout_alignTop="@+id/text2"
+        android:text="片长: 96分钟" />
+
+    <com.ms.square.android.expandabletextview.ExpandableTextView
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_below="@+id/text4"
+        android:id="@+id/expand_text_view"
+        android:layout_width="match_parent"
+        app:maxCollapsedLines="2"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/expandable_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp15" />
+        <ImageButton
+            android:id="@id/expand_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent" />
+    </com.ms.square.android.expandabletextview.ExpandableTextView>
+</RelativeLayout>

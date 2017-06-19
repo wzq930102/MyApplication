@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/login_register_title" />
+
+    <com.classic.common.MultipleStatusView
+        android:id="@+id/main_multiplestatusview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyView="@layout/custom_empty_view"
+        app:errorView="@layout/custom_error_view"
+        app:loadingView="@layout/custom_loading_view"
+        app:noNetworkView="@layout/custom_no_network_view">
+
+        <LinearLayout
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/vr_gray"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/vr_gray"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_tx_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_tx"
+                            style="@style/personinfoleft"
+                            android:text="头像" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/personinfo_tx_iv"
+                            style="@style/personinfo_center"
+                            android:layout_width="28dp"
+                            android:layout_toLeftOf="@+id/personinfo_tx_right"
+                            android:src="@mipmap/my_user_photo_login"
+                            />
+
+                        <TextView
+                            android:id="@+id/personinfo_tx_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_phone_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_phone"
+                            style="@style/personinfoleft"
+                            android:text="手机号：" />
+
+                        <TextView
+                            android:id="@+id/personinfo_phonece"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_phone_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_phone_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_nc_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_nc"
+                            style="@style/personinfoleft"
+                            android:text="昵称" />
+
+                        <TextView
+                            android:id="@+id/personinfo_ncce"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_nc_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_nc_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_mm_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_mm"
+                            style="@style/personinfoleft"
+                            android:text="密码" />
+
+                        <TextView
+                            android:id="@+id/personinfo_mm_cen"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_mm_right"
+                            android:text="修改密码" />
+
+                        <TextView
+                            android:id="@+id/personinfo_mm_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_xb_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_xb"
+                            style="@style/personinfoleft"
+                            android:text="性别" />
+
+                        <TextView
+                            android:id="@+id/personinfo_xb_ce"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_xb_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_xb_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_sr_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_sr"
+                            style="@style/personinfoleft"
+                            android:text="生日" />
+
+                        <TextView
+                            android:id="@+id/personinfo_sr_ce"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_sr_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_sr_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_zy_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_zy"
+                            style="@style/personinfoleft"
+                            android:text="职业" />
+
+                        <TextView
+                            android:id="@+id/personinfo_zy_cn"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_zy_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_zy_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_dz_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_dz"
+                            style="@style/personinfoleft"
+                            android:text="地址" />
+
+                        <TextView
+                            android:id="@+id/personinfo_dz_ce"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_dz_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_dz_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/personinfo_yx_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/personinfo_yx"
+                            style="@style/personinfoleft"
+                            android:text="邮箱" />
+
+                        <TextView
+                            android:id="@+id/personinfo_yx_ce"
+                            style="@style/personinfo_center"
+                            android:layout_toLeftOf="@+id/personinfo_yx_right"
+                            android:text="" />
+
+                        <TextView
+                            android:id="@+id/personinfo_yx_right"
+                            style="@style/personinforight" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/personinfo_leaver"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginRight="36dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/vr_red"
+                        android:gravity="center"
+                        android:text="退出登录"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </com.classic.common.MultipleStatusView>
+
+</LinearLayout>

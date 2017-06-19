@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jtvr.fragment.Game_Fragment.GameRecommendFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/game_recommend_banner"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                app:indicator_drawable_selected="@mipmap/banner_red_selected"
+                app:indicator_drawable_unselected="@mipmap/banner_white_selected"
+                app:indicator_height="8dp"
+                app:indicator_margin="4dp"
+                app:indicator_width="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp5"
+                android:background="@color/vr_bg" />
+
+            <include
+                android:id="@+id/game_fragment_content1"
+                layout="@layout/vrtv_content" />
+
+            <LinearLayout
+                android:id="@+id/game_fragment_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/gamefragment_include1"
+                    layout="@layout/gamefragment_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/gamefragment_include2"
+                    layout="@layout/gamefragment_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/gamefragment_include3"
+                    layout="@layout/gamefragment_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp5"
+                android:background="@color/vr_bg" />
+
+            <include
+                android:id="@+id/game_fragment_content2"
+                layout="@layout/vrtv_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/game_recommend_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

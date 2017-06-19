@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+           <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center"
+                   android:background="@color/vr_red">
+                   <Button
+                        android:id="@+id/tn_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="TextView"/>
+
+                   <Button
+                        android:id="@+id/tn_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RideoGroup"
+                        android:layout_below="@+id/tn_1" />
+                   <Button
+                        android:id="@+id/tn_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RideoButton"
+                        android:layout_below="@+id/tn_2"
+                        android:layout_alignLeft="@+id/tn_4"
+                        android:layout_alignStart="@+id/tn_4" />
+                   <Button
+                        android:id="@+id/tn_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CheakBox"
+                        android:layout_below="@+id/tn_3" />
+                   <Button
+                        android:id="@+id/tn_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="呼啦啦"
+                        android:layout_below="@+id/tn_4" />
+                   <Button
+                        android:id="@+id/tn_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="哇哈哈"
+                        android:layout_below="@+id/tn_5" />
+                   <Button
+                        android:id="@+id/tn_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="纯中纯"
+                        android:layout_below="@+id/tn_6" />
+                   <Button
+                        android:id="@+id/tn_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="百岁山"
+                        android:layout_below="@+id/tn_7" />
+                   <Button
+                        android:id="@+id/tn_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="雪碧"
+                        android:layout_below="@+id/tn_8" />
+                   <Button
+                        android:id="@+id/tn_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="王老吉"
+                        android:layout_below="@+id/tn_9" />
+                   <Button
+                        android:id="@+id/tn_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="加多宝"
+                        android:layout_below="@+id/tn_10" />
+                   <Button
+                        android:id="@+id/tn_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="美年达"
+                        android:layout_below="@+id/tn_11" />
+                   <Button
+                        android:id="@+id/tn_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="营养快线"
+                        android:layout_below="@+id/tn_12" />
+                   <Button
+                        android:id="@+id/tn_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="芬达"
+                        android:layout_below="@+id/tn_13" />
+                   <Button
+                        android:id="@+id/tn_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="果粒橙"
+                        android:layout_below="@+id/tn_14" />
+                   <Button
+                        android:id="@+id/tn_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="健力宝"
+                        android:layout_below="@+id/tn_15" />
+                   <Button
+                        android:id="@+id/tn_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="爽歪歪"
+                        android:layout_below="@+id/tn_16" />
+                   <Button
+                        android:id="@+id/tn_18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="黑卡"
+                        android:layout_below="@+id/tn_17" />
+                   <Button
+                        android:id="@+id/tn_19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="脉动"
+                        android:layout_below="@+id/tn_18" />
+                   <Button
+                        android:id="@+id/tn_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阿萨姆"
+                        android:layout_below="@+id/tn_19" />
+                   <Button
+                        android:id="@+id/tn_21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="果粒奶优"
+                        android:layout_below="@+id/tn_20" />
+                   <Button
+                        android:id="@+id/tn_22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="U格"
+                        android:layout_below="@+id/tn_21" />
+
+                   <ImageButton
+                       android:id="@+id/tn_23"
+                       android:layout_width="200dp"
+                       android:layout_height="100dp"
+                       android:layout_alignParentBottom="true"
+                       android:layout_alignLeft="@+id/tn_20"
+                       android:layout_alignStart="@+id/tn_20" />
+
+                   <Button
+                        android:id="@+id/tn_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ImageView"
+                       android:layout_below="@+id/tn_0"
+                       android:layout_alignLeft="@+id/tn_2"
+                       android:layout_alignStart="@+id/tn_2" />
+
+
+           </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

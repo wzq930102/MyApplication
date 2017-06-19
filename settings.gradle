@@ -1,0 +1,2 @@
+include ':jisuanqi', ':helloworld', ':mylianxi', ':mytext', ':mobilesafe'
+include ':VR'

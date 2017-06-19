@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jtvr.fragment.Game_Fragment.GameTopFragment">
+
+    <TextView
+        android:id="@+id/game_top_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp5"
+        android:drawableLeft="@mipmap/vertical"
+        android:gravity="center"
+        android:text="游戏排行" />
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/game_top_SegmentTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/game_top_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp5"
+        tl:tl_indicator_anim_enable="true"
+        tl:tl_indicator_bounce_enable="false"
+        tl:tl_indicator_color="@color/vr_009688"
+        tl:tl_indicator_corner_radius="@dimen/dp1"
+        tl:tl_tab_space_equal="false" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/game_top_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/game_top_text" />
+
+</RelativeLayout>

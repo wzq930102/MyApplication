@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--子评论Item-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="1dp"
+                android:padding="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/commentListViewChildItem_userHeader_img"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/my_user_photo_login"
+            android:layout_marginLeft="50dp"
+            />
+
+    <TextView
+            android:id="@+id/commentListViewChildItem_userName_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/commentListViewChildItem_userHeader_img"
+            android:layout_marginLeft="8dp"
+            android:text="小尼玛"
+            android:textSize="12sp"
+            android:textColor="#797979"/>
+
+    <TextView
+            android:id="@+id/commentListViewChildItem_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/commentListViewChildItem_userName_tv"
+            android:layout_below="@+id/commentListViewChildItem_userName_tv"
+            android:layout_marginTop="8dp"
+            android:text="这是评论回复的内容"
+            android:layout_marginBottom="5dp"
+            android:textSize="12sp"
+            android:textColor="#bbbbbb"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/vr_gray"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="50dp"
+        />
+
+
+</RelativeLayout>

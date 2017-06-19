@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#52aaa8a8"
+    android:paddingBottom="@dimen/dp6">
+
+    <TextView
+        android:id="@+id/Title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp15"
+        android:text="最后的风之子"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp18" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title_text"
+        android:layout_marginLeft="@dimen/dp10"
+        android:drawableLeft="@mipmap/play"
+        android:drawablePadding="@dimen/dp4"
+        android:text="2.5万次"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4"
+        android:drawablePadding="@dimen/dp4"
+        android:drawableTop="@mipmap/share"
+        android:text="分享"
+
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Title_text"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:drawablePadding="@dimen/dp4"
+        android:drawableTop="@mipmap/downloads"
+        android:text="下载"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView"
+        android:drawablePadding="@dimen/dp4"
+        android:drawableTop="@mipmap/star"
+        android:text="@string/collections"
+        android:textSize="@dimen/sp14" />
+</RelativeLayout>

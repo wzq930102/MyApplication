@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--评论Item-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="1dp"
+                android:padding="10dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/commentListViewItem_userHeader_img"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/my_user_photo_login"
+        />
+    <TextView
+            android:id="@+id/commentListViewItem_userName_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/commentListViewItem_userHeader_img"
+            android:layout_marginLeft="8dp"
+            android:text="小明同学"
+            android:textSize="14sp"
+            android:textColor="#797979"/>
+    <TextView
+            android:id="@+id/commentListViewItem_commentContent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/commentListViewItem_userName_tv"
+            android:layout_below="@+id/commentListViewItem_userName_tv"
+            android:layout_marginTop="8dp"
+            android:text="ssss"
+            android:textSize="14sp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#333333"/>
+
+    <TextView
+            android:id="@+id/commentListViewItem_reply_btn"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="回复"
+            android:textSize="12sp"
+            android:textColor="#bbbbbb"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/vr_gray"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/live_recycler_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/live_recycler_image"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/gyy" />
+
+    <RelativeLayout
+        android:id="@+id/live_recycler_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="150dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/contacts__photo_userbg" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/contacts__photo_user" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/live_recycler_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/live_recycler_image"
+        android:layout_marginLeft="12dp"
+        android:layout_toEndOf="@+id/live_recycler_layout"
+        android:layout_toRightOf="@+id/live_recycler_layout"
+        android:text="甜甜美女直播！"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/live_recycler_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
+        android:layout_alignLeft="@+id/live_recycler_name"
+        android:layout_alignStart="@+id/live_recycler_name"
+        android:layout_below="@+id/live_recycler_name"
+        android:layout_marginTop="8dp"
+        android:text="美女主播崔瑟琪直播表白观众"
+        android:textColor="@color/vr_bbbbbb"
+        android:textSize="11sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/live_recycler_image"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/live_vr_shape"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:text="VR直播"
+        android:textColor="#3beaff" />
+</RelativeLayout>

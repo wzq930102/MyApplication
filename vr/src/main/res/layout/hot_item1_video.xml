@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_video_iv"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/gyy" />
+
+    <TextView
+        android:id="@+id/item_video_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_video_iv"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="@dimen/dp12"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="最后的骑士"
+        android:textColor="#1a1a1a"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_video_property"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/item_video_title"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/vr_eaeaea"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:text="VR"
+        android:textColor="@color/vr_999999"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/item_video_content"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_video_title"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:text="一部机器人科幻电影"
+        android:textColor="@color/vr_797979"
+        android:textSize="12sp" />
+</RelativeLayout>
