@@ -81,7 +81,7 @@ public class SplashActivity extends AppCompatActivity {
 //                    connection.setRequestMethod("POST");
 
                     //4，获取响应码
-                    if(connection.getResponseCode() ==200){
+                    if(connection.getResponseCode()==200){
                         //以流的形式，将数据获取下来
                         InputStream is = connection.getInputStream();
                         //6，将流转换成字符串（工具类封装）
