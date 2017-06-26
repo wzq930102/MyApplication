@@ -1,4 +1,4 @@
-package com.hanyong.mobilesafe;
+package com.example.mobilesafe;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.hanyong.mobilesafe", appContext.getPackageName());
+        assertEquals("com.example.mobilesafe", appContext.getPackageName());
     }
 }

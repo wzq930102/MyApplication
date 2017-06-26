@@ -1,4 +1,4 @@
-package com.hanyong.mobilesafe;
+package com.example.mobilesafe;
 
 import org.junit.Test;
 
