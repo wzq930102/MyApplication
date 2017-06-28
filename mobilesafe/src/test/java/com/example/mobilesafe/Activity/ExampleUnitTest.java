@@ -1,4 +1,4 @@
-package com.example.mobilesafe;
+package com.example.mobilesafe.Activity;
 
 import org.junit.Test;
 
