@@ -3,11 +3,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <TextView 
-        android:text="HomeActivity"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"/>
+    <TextView
+        style="@style/TitleStyle"
+        android:text="功能列表" />
+
+    <!-- android:ellipsize="end"添加省略点的所在位置 -->
+    <!-- 想让文字出现跑马灯效果,必须让其获取焦点 -->
+    <!-- android:marqueeRepeatLimit="marquee_forever"一直滚动属性 -->
+    <!-- 自定义控件达到滚动效果(其实就是重新原有的TextView,让其一直能够获取焦点即可) -->
+
+    <view.FocusTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="他将是你的新郎，从今以后他就是你一生的伴，他的一切都将和你紧密相关，福和祸都要同当"
+        android:textColor="#000">
+    </view.FocusTextView>
+    <!--android:numColumns指定列数  -->
+    <!-- android:verticalSpacing="10dp"指定内部条目竖直方向间距为10dp -->
+    <GridView
+        android:id="@+id/gv_home"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </GridView>
+
+
+
 
 </LinearLayout>

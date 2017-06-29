@@ -8,23 +8,30 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
+import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-
+import utils.ConstantValue;
+import utils.SpUtil;
 import utils.StreamUtil;
 import utils.ToastUtil;
 
@@ -43,6 +50,7 @@ public class SplashActivity extends Activity {
     protected static final int JSON_ERROR = 104;
     private TextView tv_version_name;
     private int mLocalversionCode;
+    private String mDdownloadUrl;
     private String mVersionDes;
     protected static final String tag = "SplashActivity";
     private Handler mHandler = new Handler(){
@@ -76,6 +84,8 @@ public class SplashActivity extends Activity {
 
 
     };
+    private RelativeLayout rl_root;
+
     /**
      * 弹出对话框提示用户更新
      */
@@ -93,7 +103,7 @@ public class SplashActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //下载apk,apk链接地址,downloadUrl
-//                        downloadApk();
+                        downloadApk();
                     }
                    });
 
@@ -117,6 +127,72 @@ public class SplashActivity extends Activity {
 
     }
 
+    protected void downloadApk() {
+        //apk下载链接地址,放置apk的所在路径
+
+        //1,判断sd卡是否可用,是否挂在上
+        if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+            //2,获取sd路径
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath()
+                    +File.separator+"mobilesafe.apk";
+            //3,发送请求,获取apk,并且放置到指定路径
+            HttpUtils httpUtils = new HttpUtils();
+            //4,发送请求,传递参数(下载地址,下载应用放置位置)
+            httpUtils.download(mDdownloadUrl, path, new RequestCallBack<File>() {
+                @Override
+                public void onSuccess(ResponseInfo<File> responseInfo) {
+                    //下载成功(下载过后的放置在sd卡中apk)
+                    Log.i(tag, "下载成功");
+                    File file = responseInfo.result;
+                    //提示用户安装
+                    installApk(file);
+                }
+                @Override
+                public void onFailure(HttpException arg0, String arg1) {
+                    Log.i(tag, "下载失败");
+                    //下载失败
+                }
+                //刚刚开始下载方法
+                @Override
+                public void onStart() {
+                    Log.i(tag, "刚刚开始下载");
+                    super.onStart();
+                }
+
+                //下载过程中的方法(下载apk总大小,当前的下载位置,是否正在下载)
+                @Override
+                public void onLoading(long total, long current,boolean isUploading) {
+                    Log.i(tag, "下载中........");
+                    Log.i(tag, "total = "+total);
+                    Log.i(tag, "current = "+current);
+                    super.onLoading(total, current, isUploading);
+                }
+            });
+
+        }
+    }
+    /**
+     * 安装对应apk
+     * @param file	安装文件
+     */
+    protected void installApk(File file) {
+        //系统应用界面,源码,安装apk入口
+        Intent intent = new Intent("android.intent.action.VIEW");
+        intent.addCategory("android.intent.category.DEFAULT");
+		/*//文件作为数据源
+		intent.setData(Uri.fromFile(file));
+		//设置安装的类型
+		intent.setType("application/vnd.android.package-archive");*/
+        intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");
+//		startActivity(intent);
+        startActivityForResult(intent, 0);
+    }
+    //开启一个activity后，返回结果调用的方法
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        enterHome();
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     /**
      * 进入应用程序主界面
@@ -138,7 +214,18 @@ public class SplashActivity extends Activity {
         initUI();
         //初始化数据
         initDate();
+        //初始化动画
+        initAnimation();
     }
+    /**
+     * 添加淡入动画效果
+     */
+    private void initAnimation() {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
+        alphaAnimation.setDuration(3000);
+        rl_root.startAnimation(alphaAnimation);
+    }
+
 
     /**
      * 获取数据方法
@@ -156,7 +243,14 @@ public class SplashActivity extends Activity {
 		 * 新版本的描述信息
 		 * 服务器版本号
 		 * 新版本apk下载地址*/
-        CheckVersion();
+        if (SpUtil.getBoolean(this, ConstantValue.OPEN_UPDATE,false)){
+            CheckVersion();
+        }else {
+            //直接进去应用程序主界面
+            //在发送消息4秒后去处理,ENTER_HOME状态码指向的消息
+            mHandler.sendEmptyMessageDelayed(ENTER_HOME, 4000);
+        }
+
     }
 
     /**
@@ -164,9 +258,6 @@ public class SplashActivity extends Activity {
      */
     private void CheckVersion() {
         new Thread() {
-
-
-            private String mVersionDes;
 
             public void run() {
                 //发送请求获取数据,参数则为请求json的链接地址
@@ -203,12 +294,12 @@ public class SplashActivity extends Activity {
                         String versionName = jsonObject.getString("version_Name");
                         mVersionDes = jsonObject.getString("description");
                         String versionCode = jsonObject.getString("version_Code");
-                        String downloadUrl = jsonObject.getString("download_Url");
+                        mDdownloadUrl = jsonObject.getString("download_Url");
                         //日志打印
                         Log.i(tag, versionName);
                         Log.i(tag, mVersionDes);
                         Log.i(tag, versionCode);
-                        Log.i(tag, downloadUrl);
+                        Log.i(tag, mDdownloadUrl);
 
                         //8,比对版本号(服务器版本号>本地版本号,提示用户更新)
 
@@ -287,5 +378,6 @@ public class SplashActivity extends Activity {
      */
     private void initUI() {
         tv_version_name = (TextView) findViewById(R.id.tv_version_name);
+        rl_root = (RelativeLayout) findViewById(R.id.rl_root);
     }
 }
