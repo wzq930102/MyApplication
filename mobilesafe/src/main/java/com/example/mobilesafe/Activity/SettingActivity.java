@@ -1,12 +1,16 @@
 package com.example.mobilesafe.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import service.AddressService;
 import utils.ConstantValue;
 import utils.SpUtil;
 import view.SettingItemView;
+
+
 
 
 /**
@@ -19,8 +23,32 @@ public class SettingActivity extends Activity{
         setContentView(R.layout.avtivity_setting);
 
         initUpdate();
+        initAddress();
+    }
+    /**
+     * 是否显示电话号码归属地的方法
+     */
+    private void initAddress() {
+        final SettingItemView siv_address = (SettingItemView) findViewById(R.id.siv_address);
+        //点击过程中,状态(是否开启电话号码归属地)的切换过程
+        siv_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //返回点击前的选中状态
+                boolean isCheck = siv_address.isCheck();
+                siv_address.setCheck(!isCheck);
+                if (!isCheck){
+                    startService(new Intent(getApplicationContext(), AddressService.class));
+                }
+                //开启服务,管理吐司
+                //关闭服务,不需要显示吐司
+            }
+            });
     }
 
+    /**
+     * 版本更新开关
+     */
     private void initUpdate() {
       final SettingItemView siv_update = (SettingItemView) findViewById(R.id.siv_update);
         //获取已有的开关状态,用作显示

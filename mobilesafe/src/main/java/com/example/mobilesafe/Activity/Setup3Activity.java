@@ -57,5 +57,6 @@ public class Setup3Activity extends Activity{
         startActivity(intent);
 
         finish();
+        overridePendingTransition(R.anim.pre_in_anim, R.anim.pre_out_anim);
     }
 }
