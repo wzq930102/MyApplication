@@ -24,6 +24,9 @@
     <!--<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> &lt;!&ndash; //允许模拟器模拟位置坐标的权限 &ndash;&gt;-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- //获取粗略坐标的权限(网络定位时使用) -->
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 在窗体上挂在view的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
 
 
     <application android:allowBackup="true"
@@ -50,9 +53,12 @@
         <activity android:name=".ContactListActivity"/>
         <activity android:name=".AToolsActivity"/>
         <activity android:name=".QueryAddressActivity"/>
-        <activity android:name=".AddressService"/>
+        <activity android:name=".ToastLocationActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
         <receiver android:name="receiver.BootReceiver" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -66,6 +72,7 @@
         </receiver>
 
         <service android:name="service.LocationService" />
+        <service android:name="service.AddressService" />
     </application>
 
 </manifest>

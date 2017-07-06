@@ -26,5 +26,15 @@
         mobilesafe:desoff="归属地的显示已关闭"
         mobilesafe:deson="归属地的显示已开启">
     </view.SettingItemView>
+    <view.SettingClickView
+        android:id="@+id/scv_toast_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </view.SettingClickView>
+    <view.SettingClickView
+        android:id="@+id/scv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </view.SettingClickView>
 
 </LinearLayout>

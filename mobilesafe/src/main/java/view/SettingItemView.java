@@ -9,7 +9,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.example.mobilesafe.Activity.R;
 
-import static com.example.mobilesafe.Activity.R.attr.destitle;
 
 
 /**

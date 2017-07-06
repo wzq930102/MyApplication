@@ -1,2 +1,2 @@
-include ':jisuanqi', ':helloworld', ':mylianxi', ':mytext', ':mobilesafe'
+include ':jisuanqi', ':mobilesafe', ':rocketman'
 include ':VR'
